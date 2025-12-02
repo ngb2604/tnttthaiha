@@ -1,0 +1,44 @@
+{
+"files.associations": {
+    "stdio.h": "c"
+},
+"launch": {
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C++",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",  // Chạy đúng file thực thi
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "console": "externalTerminal",
+            "preLaunchTask": "Build C++",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe"
+        }
+    ]
+},
+"tasks": {
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+},
+"C_Cpp.errorSquiggles": "disabled"
+}
